@@ -1,25 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import axios from 'axios'
+import { useState, useEffect} from 'react'
 
 function App() {
+
+  const [coins, setCoins] = useState([]);
+  useEffect(() => {
+    axios
+    .get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=gbp&order=market_cap_desc&per_page=100&page=1&sparkline=false')
+    .then(res => console.log(res.data))
+    .catch(error => console.log(error))
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        </div>
     </div>
   );
 }
 
 export default App;
+
+
+// API CoinGecko - pull market prices using API link
+// Returns it in JSON format. 
+
