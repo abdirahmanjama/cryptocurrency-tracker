@@ -1,4 +1,3 @@
-import './App.css';
 import axios from 'axios'
 import { useState, useEffect} from 'react'
 import Coin from './components/Coin';
@@ -29,8 +28,6 @@ function App() {
     <div className="coin-app">
      
           <Header onChange={handleChange}/>
-          
-
     {filteredCoins.map(coin => { return(
         <Coin key={coin.id} name={coin.name} image={coin.image} price={coin.current_price} symbol = {coin.symbol} volume={coin.market_cap}/>
       )
