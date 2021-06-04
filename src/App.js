@@ -29,7 +29,7 @@ function App() {
      
           <Header onChange={handleChange}/>
     {filteredCoins.map(coin => { return(
-        <Coin key={coin.id} name={coin.name} image={coin.image} price={coin.current_price} symbol = {coin.symbol} volume={coin.market_cap}/>
+        <Coin key={coin.id} name={coin.name} image={coin.image} price={coin.current_price} symbol = {coin.symbol} volume={coin.market_cap} priceChange = {coin.price_change_percentage_24h}/>
       )
     })}
     </div>
